@@ -10,11 +10,10 @@
 <body>
 
     <nav>
-        <div class="logo">The Wall</div>
+        <div class="logo"><a href="userposts.php">The Wall</a></div>
 
         <ul class="nav-links">
 
-            <li> <a href="userposts.php">The Wall</a> </li>
             <div class="dropdown">Account
             <div class="dropdown-content">
             <br>

@@ -18,7 +18,7 @@ include "./layout/header.php"
         if (isset($_POST['del'])) {
             delPost($_POST['id']);
         }
-        echo "<h1><span style='color:blue'>User: </span>" . $_SESSION['Username'] . "</h1>";
+        echo "<center><h1><span style='color:blue'>User: </span>" . $_SESSION['Username'] . "</h1></center>";
 
         //grab all posts from database to print on page
         $query = "SELECT * FROM posts";
@@ -59,7 +59,7 @@ include "./layout/header.php"
                     ?>
                     <div>ID: <?php echo htmlspecialchars($postid); ?> </div>
                     <div>Name: <?php echo htmlspecialchars($post['username']); ?> </div>
-                    <div class="date"><?php echo htmlspecialchars(date_format($date, 'g:ia \o\n l jS F Y')); ?> </div>
+                    <div class="date"><?php echo htmlspecialchars(date_format($date, 'g:ia \o\n l M jS Y')); ?> </div>
 
                 </div>
                 <ul>
@@ -93,9 +93,23 @@ include "./layout/header.php"
             ?>
         </div>
 <?php endforeach;
+        } else {
+            ?>
+             <center>
+                <h1>The Wall</h1>
+            
+            <br>
+            <p>Thanks for visiting the wall!<br>
+                <br>
+                The Wall is a social media platform that uses text only posts.<br><br>
+                Everyone can see everyone's post<br><br>
+                You must be logged in to enjoy the features of the Wall<br><br>
+                <br>
+                Please either click <a href="index.php">here</a> to login,<br>
+                or click <a href="newuser.php">here</a> to register.</p>
+                </center>
+            <?php
         }
-
-
 
 //DB FUNCTIONS
         function addPost()

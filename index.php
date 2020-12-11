@@ -15,15 +15,15 @@ include "./layout/header.php"
         </center>
         <br>
         <p>Thanks for visiting the wall!</p><br>
-            <br>
-            <h2>Thanks for logging in!<br><br>
-                You are <code><?= $_SESSION['Username'] ?></code> <br><br>
-                Email address is <code><?= $_SESSION['EmailAddress'] ?></code>.</h2>
-            <br><br>
-            <p><a href="logout.php">Logout</a></p>
+        <br>
+        <h2>Thanks for logging in!<br><br>
+            You are <code><?= $_SESSION['Username'] ?></code> <br><br>
+            Email address is <code><?= $_SESSION['EmailAddress'] ?></code>.</h2>
+        <br><br>
+        <p><a href="logout.php">Logout</a></p>
 
 
-        <?php
+    <?php
 
     } elseif (!empty($_POST['username']) && !empty($_POST['password'])) { //When a user is logging infirst time.
 
@@ -43,16 +43,16 @@ include "./layout/header.php"
             $_SESSION['LoggedIn'] = 1;
             echo "<h1>Success</h1>";
             echo "<a href='index.php'>Click here to go to members area.</a>";
+            header("Refresh:0");
         } else {
             echo "<h1>Error</h1>";
             echo "<p>Sorry, your account could not be found. Please <a href=\"index.php\">click here to try again</a>.</p>";
         }
     } else { //When a user is comingfirst time.  →Notlogged in.
-        ?>
+    ?>
 
-            <center>
-                <h1>The Wall</h1>
-            </center>
+        <center>
+            <h1>The Wall</h1>
             <br>
             <p>Thanks for visiting the wall!<br>
                 <br>
@@ -71,9 +71,10 @@ include "./layout/header.php"
                     <input type="submit" name="login" id="login" value="Login" />
                 </fieldset>
             </form>
-        <?php
+        </center>
+    <?php
     } // End of if
-        ?>
+    ?>
 </div>
 <?php
 include "./layout/footer.php"
